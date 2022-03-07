@@ -1,0 +1,39 @@
+The goal of this project is for you to put everything you have learned so far together, plus utilize the new File I/O and STL skills. The assumption is that you have read the book/materials through chapters 1-10, including Chapter 8 - Abnormal Control Flow, Chapter 9 Input and Output, and especially Chapter 10, Collections: The Standard Template Library (STL).
+
+You will be writing a full console application, which mimics a hospital emergency room triage (very simplified) that has two major functions: cataloging/reporting of patient information and simulation of “treating” patients.
+
+Also, unlike the other assignments, I am purposefully NOT being prescriptive in what the code itself should look like. Rather, below you will find acceptance criteria that you must meet in order to get full credit. In the "real world" you (as a developer/engineer/programer or whatever title) will most likely just be given a set of things that must be true about the software you are to deliver. The person or folks giving you these will probably not be experts in coding (that's why they hired you!), and it will be up to YOU to deliver something that works, is efficient, is polished, and bug-free. However, you would obviously be expected to ask stakeholders clarifying questions, and in this case, I am your stakeholder. You are free to make design decisions and assumptions, but there is always a risk with that, so feel free to reach out and ask. If you have questions about the assignment's acceptance criteria, I ask that you use the public chat feature in Canvas so everyone can see the same answer. Email is fine for personal or code specific questions.
+Some Upfront Terminology and Clarifications:
+"Triaging" patients is by priority order, and then first come, first serve. Priority is an integer, with lower number being a higher priority. E.g. 1 is higher than 10. You will need to use the appropriate STL container, I will not give it to you.
+
+“Treating” a patient is marking them as treated and removing them from the triaged container and inserting them into a treated container, as well as some random thread sleep interval from 1 to 3 seconds to "simulate" time passing. E.g. if you have 100 patients, it won't magically mark everyone as treated right away.
+
+I have a file called "patients.txt" to use as sample data to get started (I will use different data in grading). Do not worry about invalid data cases (when reading input, etc), but in cases where you can, please add proper exception handling so that the program doesn't crash on the user. That's a bad experience, and we want this to be user-ready, and polished.
+
+All commands are accessible to all users, so you do not need to worry about roles, permissions, etc. Even though I will detail roles in the AC below, that is just for an understanding of who might be using the system, not something you have to code for. There is also no login/logout mechanism, just run and start using.
+
+Lastly, this program is different than others you may have written in the past. It is presenting a text-based user interface, and will have a main loop that won't exit unless you ask it to. 
+
+Acceptance Criteria:
+
+    As a nurse, I want to add a patient to the system.
+    As a doctor, I want to treat a patient in triaged order.
+    As a doctor, I want to print out a patient’s information as a report.
+    As a doctor, I want to print out a report of all treated patients.
+    As a doctor, I want to know the next patient to be treated.
+    As a hospital admin, I want to print out a report of all the patients in triage.
+    As a hospital admin, I want a single command to treat all patients.
+    As a hospital admin, I want a print out of all patients by doctor.
+    As any user, I want to be able to print out a guide on each command the system offers. (eg "help" functionality).
+    As a sys admin, I want to bulk add patients into the system from a file (see patients.txt)
+    As a sys admin, I want all operations of the system by each user to be logged to a file in normal mode.
+    As a sys admin, I want some way to turn on debug mode.
+    As a sys admin, I want all operations of the system by each user to be logged to the console in debug mode.
+
+----
+
+    As a professor, my students should use standard STL containers, algorithms, and iterators to solve the problem.
+    As a professor, students should use the proper STL container for a triaging system, and the proper function object (aka functor) predicate object.
+    As a professor, my students should use streams to facilitate the retrieval and storage of the patient data.
+    As a professor, my students should use proper syntax, formatting, commenting, break code into classes and separate files, and otherwise logically separate code.
+    As a professor, and as a user, I want a simple command-line style interface to easily interact with the system without confusion.
